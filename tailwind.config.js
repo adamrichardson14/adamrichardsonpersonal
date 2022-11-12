@@ -5,9 +5,17 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    colors: {
+      gray: colors.neutral,
+      white: colors.white,
+      cyan: colors.cyan,
+      yellow: colors.yellow,
+      green: colors.green,
+      fuchsia: colors.fuchsia,
+      transparent: colors.transparent,
+    },
     extend: {
       colors: {
-        gray: colors.neutral,
         gray: {
           910: "#171717",
           920: "#101010",
@@ -20,5 +28,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
