@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "@next/font/google";
 import Nav from "./Nav";
+import Footer from "./Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className={`bg-gray-920`}>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

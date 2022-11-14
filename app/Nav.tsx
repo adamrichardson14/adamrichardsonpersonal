@@ -4,10 +4,7 @@ import NavLink from "./NavLink";
 export default function Nav() {
   const links = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Gallery", href: "/gallery" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
   ];
 
   return (

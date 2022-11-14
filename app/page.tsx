@@ -17,6 +17,8 @@ import MostRecentYoutubeVideo from "./MostRecentYoutubeVideo";
 import MostRecentCodeSnippet from "./MostRecentCodeSnippet";
 import Projects from "./Projects";
 import Blog from "./Blog";
+import CodeSnippets from "./CodeSnippets";
+import YoutubeVids from "./YoutubeVids";
 
 export default function Home() {
   return (
@@ -129,6 +131,10 @@ export default function Home() {
         <Projects />
         {/* @ts-expect-error Server Component */}
         <Blog />
+
+        {/* <YoutubeVids /> */}
+        {/* @ts-expect-error Server Component */}
+        <CodeSnippets />
       </Container>
     </main>
   );

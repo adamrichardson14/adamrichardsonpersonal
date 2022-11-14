@@ -34,6 +34,7 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
         <svg
           width={size}
           height={size}
+          className="text-white hover:text-gray-200 duration-200 transition-colors"
           viewBox="0 0 40 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,6 +54,7 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
         <svg
           width={size}
           height={size}
+          className="text-white hover:text-gray-200 duration-200 transition-colors"
           viewBox="0 0 40 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -72,6 +74,7 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
         <svg
           width={size}
           height={size}
+          className="text-white hover:text-gray-200 duration-200 transition-colors"
           viewBox="0 0 40 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

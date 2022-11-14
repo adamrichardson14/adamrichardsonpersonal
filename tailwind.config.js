@@ -7,7 +7,17 @@ module.exports = {
   theme: {
     colors: {
       gray: colors.neutral,
-      ...colors,
+      cyan: colors.cyan,
+      green: colors.green,
+      transparent: colors.transparent,
+      fucshia: colors.fuchsia,
+      white: colors.white,
+      black: colors.black,
+      red: colors.red,
+      yellow: colors.yellow,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.purple,
     },
     screens: {
       xs: "480px",
