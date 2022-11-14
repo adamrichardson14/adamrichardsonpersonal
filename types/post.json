@@ -1,0 +1,144 @@
+{
+  "author": {
+    "id": "%40Ko%3B",
+    "type": "people",
+    "people": [
+      {
+        "object": "user",
+        "id": "4bf5c74f-f637-4122-8671-bf9331881b99",
+        "name": "Adam Richardson",
+        "avatar_url": "https://s3-us-west-2.amazonaws.com/public.notion-static.com/2465d489-2401-4ede-9b2c-86f11551dbce/adam_richardson_image.jpg",
+        "type": "person",
+        "person": {}
+      }
+    ]
+  },
+  "Tags": {
+    "id": "BN%5DP",
+    "type": "multi_select",
+    "multi_select": [
+      {
+        "id": "efa17cc4-fac9-43e8-99fa-86af7ee25851",
+        "name": "hygraph",
+        "color": "purple"
+      },
+      {
+        "id": "lBgX",
+        "name": "Blog Post",
+        "color": "brown"
+      },
+      {
+        "id": "7993ec69-9767-4b84-adb9-5f1c907a6c77",
+        "name": "React.js",
+        "color": "blue"
+      }
+    ]
+  },
+  "slug": {
+    "id": "KtqG",
+    "type": "rich_text",
+    "rich_text": [
+      {
+        "type": "text",
+        "text": {
+          "content": "complete-control-over-rendering-hygraph-content",
+          "link": null
+        },
+        "annotations": {
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        "plain_text": "complete-control-over-rendering-hygraph-content",
+        "href": null
+      }
+    ]
+  },
+  "Category": {
+    "id": "WUL%5E",
+    "type": "select",
+    "select": {
+      "id": "nJh?",
+      "name": "Blog Post",
+      "color": "blue"
+    }
+  },
+  "Multi-select": {
+    "id": "Z%7Bde",
+    "type": "multi_select",
+    "multi_select": []
+  },
+  "date": {
+    "id": "a%3Cql",
+    "type": "date",
+    "date": {
+      "start": "2022-09-22",
+      "end": null,
+      "time_zone": null
+    }
+  },
+  "Tweet": {
+    "id": "jhf%3B",
+    "type": "rich_text",
+    "rich_text": []
+  },
+  "Created": {
+    "id": "nAX%7B",
+    "type": "created_time",
+    "created_time": "2022-09-22T12:45:00.000Z"
+  },
+  "published": {
+    "id": "yWTh",
+    "type": "checkbox",
+    "checkbox": true
+  },
+  "Description": {
+    "id": "~%5DS%3C",
+    "type": "rich_text",
+    "rich_text": [
+      {
+        "type": "text",
+        "text": {
+          "content": "In this article, I will show you how you can create your own Hygraph Block renderer to give complete control over your content, create custom blocks for use with next/image etc",
+          "link": null
+        },
+        "annotations": {
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        "plain_text": "In this article, I will show you how you can create your own Hygraph Block renderer to give complete control over your content, create custom blocks for use with next/image etc",
+        "href": null
+      }
+    ]
+  },
+  "title": {
+    "id": "title",
+    "type": "title",
+    "title": [
+      {
+        "type": "text",
+        "text": {
+          "content": "Create a Hygraph block renderer with Next.js",
+          "link": null
+        },
+        "annotations": {
+          "bold": false,
+          "italic": false,
+          "strikethrough": false,
+          "underline": false,
+          "code": false,
+          "color": "default"
+        },
+        "plain_text": "Create a Hygraph block renderer with Next.js",
+        "href": null
+      }
+    ]
+  }
+}

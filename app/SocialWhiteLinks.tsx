@@ -7,7 +7,11 @@ type Props = {
 export default function SocialWhiteLinks({ className, size = 40 }: Props) {
   return (
     <div className={clsx(className)}>
-      <a href="">
+      <a
+        target="__blank"
+        rel="noopener noreferrer"
+        href="https://instagram.com/adaamr"
+      >
         <svg
           width={size}
           height={size}
@@ -22,7 +26,11 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
         </svg>
       </a>
 
-      <a href="">
+      <a
+        target="__blank"
+        rel="noopener noreferrer"
+        href="https://twitter.com/adaamr"
+      >
         <svg
           width={size}
           height={size}
@@ -37,7 +45,11 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
         </svg>
       </a>
 
-      <a href="">
+      <a
+        target="__blank"
+        rel="noopener noreferrer"
+        href="https://www.youtube.com/channel/UC0QZp69ZABhoIr6Pp-lQEzA"
+      >
         <svg
           width={size}
           height={size}
@@ -52,7 +64,11 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
         </svg>
       </a>
 
-      <a href="">
+      <a
+        target="__blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/adamrichardson3/"
+      >
         <svg
           width={size}
           height={size}

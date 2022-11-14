@@ -1,5 +1,5 @@
 const colors = require("tailwindcss/colors");
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const { fontFamily, screens } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,12 +7,11 @@ module.exports = {
   theme: {
     colors: {
       gray: colors.neutral,
-      white: colors.white,
-      cyan: colors.cyan,
-      yellow: colors.yellow,
-      green: colors.green,
-      fuchsia: colors.fuchsia,
-      transparent: colors.transparent,
+      ...colors,
+    },
+    screens: {
+      xs: "480px",
+      ...screens,
     },
     extend: {
       colors: {
@@ -24,7 +23,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
-        mono: ["var(--font-robotoMono)", ...fontFamily.mono],
       },
     },
   },
