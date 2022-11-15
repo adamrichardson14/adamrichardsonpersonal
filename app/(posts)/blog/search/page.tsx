@@ -75,8 +75,8 @@ async function getPosts(search?: string, tag?: string) {
   return response.results;
 }
 
-export default async function Search({ searchParams: { tag, search } }: any) {
-  const results = await getPosts(search, tag);
+export default async function Search({ searchParams }: any) {
+  const results = await getPosts(searchParams.search, searchParams.tag);
   const posts = results as Page[];
   if (posts.length === 0) {
     return (
