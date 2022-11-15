@@ -7,6 +7,7 @@ import { Page } from "../../../../types/notion";
 import Link from "next/link";
 import { EyeIcon } from "@heroicons/react/24/outline";
 
+export const dynamic = "force-dynamic";
 interface SearchProps {
   searchParams?: { search?: string; tag?: string };
 }
