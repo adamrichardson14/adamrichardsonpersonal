@@ -8,10 +8,7 @@ import Link from "next/link";
 import { EyeIcon } from "@heroicons/react/24/outline";
 
 interface SearchProps {
-  searchParams: {
-    search?: string;
-    tag?: string;
-  };
+  searchParams?: { search?: string; tag?: string };
 }
 
 function getFilters(search: string | undefined, tag: string | undefined) {
@@ -73,15 +70,11 @@ async function getPosts(search?: string, tag?: string) {
     page_size: 100,
   };
 
-  console.log(JSON.stringify(dbQuery, null, 2));
   const response = await notion.databases.query(dbQuery);
   return response.results;
 }
 
-export default async function Search({
-  searchParams: { tag, search },
-}: SearchProps) {
-  console.log({ tag, search });
+export default async function Search({ searchParams: { tag, search } }: any) {
   const results = await getPosts(search, tag);
   const posts = results as Page[];
   if (posts.length === 0) {
