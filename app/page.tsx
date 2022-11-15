@@ -129,6 +129,15 @@ export default function Home() {
           </div>
         </header>
         <Projects />
+        <div className="flex justify-between items-center mt-52">
+          <span className="text-8xl font-semibold text-white">Blog</span>
+          <Link
+            href="/blog"
+            className="underline underline-offset-4 text-gray-200"
+          >
+            View All Posts
+          </Link>
+        </div>
         {/* @ts-expect-error Server Component */}
         <Blog />
 

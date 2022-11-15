@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head />
-      <body className={`bg-gray-920`}>
+      <body className="bg-gray-920 h-screen">
         <Nav />
         {children}
         <Footer />

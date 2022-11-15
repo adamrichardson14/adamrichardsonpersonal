@@ -13,7 +13,6 @@ async function getMostRecentYoutubeVideos(): Promise<Videos> {
   const mostRecentVideos = (await response.json()) as Videos;
   const videoIds = mostRecentVideos.items.map((video) => video.id.videoId);
   const videoIdsString = videoIds.join(",");
-  console.log(videoIdsString);
   const videoStatsURL = `https://youtube.googleapis.com/youtube/v3/videos?part=statistics,snippet&id=${videoIdsString}&key=${YOUTUBE_API_KEY}`;
   const videoStatsResponse = await fetch(videoStatsURL);
   return await videoStatsResponse.json();
@@ -21,7 +20,6 @@ async function getMostRecentYoutubeVideos(): Promise<Videos> {
 
 export default async function YoutubeVids({}) {
   const videos = await getMostRecentYoutubeVideos();
-  console.log(JSON.stringify(videos, null, 2));
   return (
     <section className="mt-52 mb-10">
       <span className="text-8xl font-semibold text-white text-center md:text-left block w-full">Recent Videos</span>

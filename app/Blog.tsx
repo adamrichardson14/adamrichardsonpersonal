@@ -1,6 +1,5 @@
 import "server-only";
 
-import { BookOpenIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 import { Client } from "@notionhq/client";
@@ -9,7 +8,7 @@ const notion = new Client({ auth: process.env.NOTION_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 export const revalidate = 60 * 60;
 
-async function fetchBlogPosts() {
+async function fetchBlogPosts(size: number) {
   if (databaseId === undefined) {
     throw new Error("No database ID provided");
   }
@@ -25,25 +24,16 @@ async function fetchBlogPosts() {
       ],
     },
     sorts: [{ property: "date", direction: "descending" }],
-    page_size: 5,
+    page_size: size,
   };
   return await notion.databases.query(dbQuery);
 }
 
-export default async function Blog({}) {
-  const results = await fetchBlogPosts();
+export default async function Blog({ size = 5 }) {
+  const results = await fetchBlogPosts(size);
   const posts = results.results as Page[];
   return (
-    <section className="mt-52 mb-20">
-      <div className="flex justify-between items-center">
-        <span className="text-8xl font-semibold text-white">Blog</span>
-        <Link
-          href="/blog"
-          className="underline underline-offset-4 text-gray-200"
-        >
-          View All Posts
-        </Link>
-      </div>
+    <section className="mb-20">
       <div className="flex flex-col mt-10">
         {posts.map((post) => (
           <Link

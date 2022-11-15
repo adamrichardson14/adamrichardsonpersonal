@@ -159,3 +159,15 @@ export interface dbQueryCode {
   sorts: [{ property: string; direction: "ascending" | "descending" }];
   page_size: number;
 }
+
+export interface dbQuerySlug {
+  database_id: string;
+  filter: {
+    and: [
+      { property: string; checkbox: { equals: boolean } },
+      { property: string; rich_text: { equals: string } }
+    ];
+  };
+  sorts: [{ property: string; direction: "ascending" | "descending" }];
+  page_size: number;
+}
