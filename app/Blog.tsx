@@ -52,7 +52,7 @@ export default async function Blog({ size = 5 }) {
               <p className="text-gray-300 mt-1 font-sans">
                 {post.properties.Description.rich_text[0].plain_text}
               </p>
-              <div className="flex gap-3 mt-3">
+              <div className="flex gap-3 flex-wrap mt-3 w-full">
                 {post.properties.Tags.multi_select.map((tag) => (
                   <span
                     key={tag.id}

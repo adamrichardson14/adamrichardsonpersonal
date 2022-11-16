@@ -3,13 +3,15 @@ import "server-only";
 const databaseId = process.env.NOTION_DATABASE_ID;
 import { Client } from "@notionhq/client";
 const notion = new Client({ auth: process.env.NOTION_KEY });
-import { Page } from "../../../../types/notion";
+import { Page } from "../../../../../types/notion";
 import Link from "next/link";
 import { EyeIcon } from "@heroicons/react/24/outline";
 
 export const dynamic = "force-dynamic";
 interface SearchProps {
-  searchParams?: { search?: string; tag?: string };
+  params?: {
+    search?: string;
+  };
 }
 
 function getFilters(search: string | undefined, tag: string | undefined) {
@@ -75,8 +77,15 @@ async function getPosts(search?: string, tag?: string) {
   return response.results;
 }
 
-export default async function Search({ searchParams }: any) {
-  const results = await getPosts(searchParams.search, searchParams.tag);
+export default async function Search({ params: { search } }: any) {
+  if (!search) {
+    return (
+      <h2 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-yellow-500 to-yellow-200 bg-clip-text mb-10">
+        Search for something...
+      </h2>
+    );
+  }
+  const results = await getPosts(search);
   const posts = results as Page[];
   if (posts.length === 0) {
     return (
@@ -146,7 +155,7 @@ export default async function Search({ searchParams }: any) {
       ).length > 0 && (
         <>
           <h1 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-fucshia-500 to-fucshia-200 bg-clip-text">
-            Adam Richardson's "Useful" Code Snippets
+            Code Snippets
           </h1>
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
             {posts

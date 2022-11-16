@@ -19,7 +19,11 @@ export default function CodeHighlights({ value }: Props) {
       <pre className="font-mono">
         <SyntaxHighlighter
           language={value.language}
+          lineProps={{
+            style: { wordBreak: "break-all", whiteSpace: "pre-wrap" },
+          }}
           style={atomOneDark}
+          wrapLines={true}
           customStyle={{
             backgroundColor: "#171717",
             paddingTop: "30px",

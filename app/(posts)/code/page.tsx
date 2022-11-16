@@ -4,7 +4,7 @@ import Code from "./Code";
 type Props = {};
 export default function CodePage({}: Props) {
   return (
-    <main>
+    <main className="mt-10 md:mt-0">
       <h1 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-fucshia-500 to-fucshia-200 bg-clip-text">
         Adam Richardson's "Useful" Code Snippets
       </h1>
@@ -15,7 +15,7 @@ export default function CodePage({}: Props) {
         data related topics such as Python, Pandas, SparkSQL and Matplotlib.
       </h2>
       {/* @ts-expect-error Server Component */}
-      <Code size={100} />
+      <Code codePage size={100} />
     </main>
   );
 }

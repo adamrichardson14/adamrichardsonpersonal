@@ -7,8 +7,8 @@ export default function LoadingComponent() {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 113 69"
         className="w-32 h-32"
-        shape-rendering="geometricPrecision"
-        text-rendering="geometricPrecision"
+        shapeRendering="geometricPrecision"
+        textRendering="geometricPrecision"
       >
         <path
           id="e5eRSYMwQty2"

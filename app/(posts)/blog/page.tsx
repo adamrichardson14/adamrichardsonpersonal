@@ -4,8 +4,8 @@ import Blog from "../../Blog";
 type Props = {};
 export default function BlogPage({}: Props) {
   return (
-    <main>
-      <h1 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-yellow-500 to-yellow-200 bg-clip-text">
+    <main className="mt-10 md:mt-0">
+      <h1 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-yellow-500 to-yellow-200 bg-clip-text ">
         Adam Richardson's Blog
       </h1>
       <h2 className="text-gray-300 leading-8">

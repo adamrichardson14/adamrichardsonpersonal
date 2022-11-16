@@ -82,7 +82,7 @@ export default async function Post({ params: { slug } }: Props) {
   const post = response.results[0] as Page;
 
   return (
-    <div>
+    <article className="mt-10 md:mt-0">
       <h1 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-fucshia-500 to-fucshia-200 bg-clip-text">
         {post.properties.title.title[0].plain_text}
       </h1>
@@ -92,6 +92,6 @@ export default async function Post({ params: { slug } }: Props) {
       {blocks.map((block) => (
         <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
       ))}
-    </div>
+    </article>
   );
 }

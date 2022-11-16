@@ -30,18 +30,30 @@ async function fetchCodeSnippets(size: number) {
   return await notion.databases.query(dbQuery);
 }
 
-export default async function Code({ size = 5 }) {
+export default async function Code({
+  size = 5,
+  codePage,
+}: {
+  size?: number;
+  codePage?: boolean;
+}) {
   const results = await fetchCodeSnippets(size);
   const snippets = results.results as Page[];
   return (
     <section className="mb-20">
-      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+      <div
+        className={`${
+          codePage
+            ? "grid-cols-1 xs:grid-cols-2 lg:grid-cols-3"
+            : "grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3"
+        } grid gap-4 mt-10`}
+      >
         {snippets.map((snippet) => (
           <div
             key={snippet.id}
             className="relative w-full rounded-lg border-2 border-gray-800 p-3"
           >
-            <h3 className="text-gray-200 pb-2 line-clamp-2">
+            <h3 className="text-gray-200 mb-2 line-clamp-2">
               {snippet.properties.title.title[0].plain_text}
             </h3>
             <div className="flex justify-between">
