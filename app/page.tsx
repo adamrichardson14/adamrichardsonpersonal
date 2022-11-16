@@ -80,7 +80,7 @@ export default function Home() {
                   <MostRecentBlogPost />
                 </Suspense>
 
-                {/* <Suspense
+                <Suspense
                   fallback={
                     <LoadingMostRecentItem
                       title="Getting most recent video"
@@ -90,9 +90,9 @@ export default function Home() {
                     />
                   }
                 >
-                  @ts-expect-error Server Component
+                  {/* @ts-expect-error Server Component */}
                   <MostRecentYoutubeVideo />
-                </Suspense> */}
+                </Suspense>
                 <Suspense
                   fallback={
                     <LoadingMostRecentItem
@@ -140,8 +140,8 @@ export default function Home() {
         </div>
         {/* @ts-expect-error Server Component */}
         <Blog />
-
-        {/* <YoutubeVids /> */}
+        {/* @ts-expect-error Server Component */}
+        <YoutubeVids />
         {/* @ts-expect-error Server Component */}
         <CodeSnippets />
       </Container>
