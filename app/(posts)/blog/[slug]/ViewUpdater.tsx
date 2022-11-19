@@ -12,8 +12,6 @@ const fetcher: Fetcher<Prisma.viewCountSelect, string> = (url: string) =>
 export default function ViewUpdater({ slug }: Props) {
   const { data, isValidating } = useSWR(`/api/views/${slug}`, fetcher);
 
-  console.log(data);
-
   return (
     <div className="flex">
       <span className="block text-gray-500">

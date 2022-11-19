@@ -105,24 +105,6 @@ export default function Home() {
                   {/* @ts-expect-error Server Component */}
                   <MostRecentCodeSnippet />
                 </Suspense>
-                {/* <div className="relative w-full rounded-lg border-l-2 border-b-2 border-gray-800 p-3">
-                  <CodeBracketIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-500" />
-                  <h3 className="text-gray-200 pb-2 line-clamp-2">
-                    Create a Hygraph block renderer with Next.js
-                  </h3>
-                  <div className="flex justify-between">
-                    <Link
-                      href="/"
-                      className="underline underline-offset-4 text-gray-100"
-                    >
-                      View Code
-                    </Link>
-                    <div className="flex">
-                      <span className="block text-gray-500">1,123</span>
-                      <EyeIcon className="w-6 h-6 text-gray-500 ml-2" />
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>

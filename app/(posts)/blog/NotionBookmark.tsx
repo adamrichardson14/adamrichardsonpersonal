@@ -7,11 +7,8 @@ const previewFetcher = (url: string) =>
   fetch(`/api/bookmark/${encodeURIComponent(url)}`).then((res) => res.json());
 
 const Bookmark = ({ value }: { value: any }) => {
-  console.log("This is happening");
   const { url } = value;
   const { data, error } = useSWR(url, previewFetcher);
-
-  console.log({ bookmark: data, error });
 
   if (error)
     return (

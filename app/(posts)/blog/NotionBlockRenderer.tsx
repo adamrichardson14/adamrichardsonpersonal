@@ -131,7 +131,6 @@ export function renderNotionBlock(block: any) {
       return <Bookmark value={value} />;
 
     case "code":
-      console.log(value);
       return <CodeHighlights value={value} />;
     default:
       return (

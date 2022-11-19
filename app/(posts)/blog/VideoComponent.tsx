@@ -14,9 +14,7 @@ type Props = {
   videoCaption: string;
 };
 export default function VideoComponent({ videoSrc, videoCaption }: Props) {
-  console.log(videoSrc, videoCaption);
   const splitSrc = videoSrc.split("?v=");
-  console.log(splitSrc);
   const onPlayerReady: YouTubeProps["onReady"] = (event) => {
     console.log("ready");
   };

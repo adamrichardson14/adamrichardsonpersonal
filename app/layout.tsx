@@ -20,12 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
       <head />
-      <Analytics />
       <body className="bg-gray-920 h-screen">
         <Nav />
         {children}
         <Footer />
       </body>
+      <Analytics />
     </html>
   );
 }
