@@ -37,15 +37,15 @@ export default function Home() {
               className="mb-5"
             />
             <h2 className="py-5">
-              <span className="text-[32px] leading-8  font-bold bg-gradient-to-r text-transparent from-cyan-500 to-cyan-200 bg-clip-text">
+              <span className="text-[32px] leading-8 font-mono  font-bold bg-gradient-to-r text-transparent from-cyan-500 to-cyan-200 bg-clip-text">
                 Fullstack Developer
               </span>
               <br />
-              <span className="text-[32px] leading-8  font-bold  bg-gradient-to-r text-transparent from-yellow-500 to-yellow-200 bg-clip-text">
+              <span className="text-[32px] leading-8 font-mono font-bold  bg-gradient-to-r text-transparent from-yellow-500 to-yellow-200 bg-clip-text">
                 Course Creator
               </span>
               <br />
-              <span className="text-[32px] leading-8  font-bold  bg-gradient-to-r text-transparent from-green-500 to-green-200 bg-clip-text">
+              <span className="text-[32px] leading-8 font-mono font-bold  bg-gradient-to-r text-transparent from-green-500 to-green-200 bg-clip-text">
                 Data Enthusiast
               </span>
             </h2>

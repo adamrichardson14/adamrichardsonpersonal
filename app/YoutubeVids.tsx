@@ -22,7 +22,7 @@ export default async function YoutubeVids({}) {
   const videos = await getMostRecentYoutubeVideos();
   return (
     <section className="mt-52 mb-10">
-      <span className="text-8xl font-semibold text-white text-center md:text-left block w-full">Recent Videos</span>
+      <span className="text-3xl md:text-8xl font-semibold text-white text-center md:text-left block w-full">Recent Videos</span>
       <div className="grid mx-auto grid-cols-1 md:grid-cols-2 gap-4 mt-10 w-full">
         {videos.items.map((video) => (
           <div
