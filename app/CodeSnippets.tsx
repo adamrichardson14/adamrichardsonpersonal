@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { Client } from "@notionhq/client";
 import { dbQueryCode, Page } from "../types/notion";
+import ViewCounter from "./ViewCounter";
 const notion = new Client({ auth: process.env.NOTION_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -59,10 +60,9 @@ export default async function CodeSnippets() {
               >
                 View Code
               </Link>
-              <div className="flex">
-                <span className="block text-gray-500">1,123</span>
-                <EyeIcon className="w-6 h-6 text-gray-500 ml-2" />
-              </div>
+              <ViewCounter
+                slug={snippet.properties.slug.rich_text[0].plain_text}
+              />
             </div>
           </div>
         ))}

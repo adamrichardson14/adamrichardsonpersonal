@@ -5,6 +5,8 @@ import { dbQuerySlug, Page } from "../../../../types/notion";
 import { Fragment } from "react";
 import { renderNotionBlock } from "../NotionBlockRenderer";
 import probeImageSize from "../imaging";
+import ViewCounter from "../../../ViewCounter";
+import ViewUpdater from "./ViewUpdater";
 const notion = new Client({ auth: process.env.NOTION_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -86,9 +88,13 @@ export default async function Post({ params: { slug } }: Props) {
       <h1 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-fucshia-500 to-fucshia-200 bg-clip-text">
         {post.properties.title.title[0].plain_text}
       </h1>
-      <span className="text-sm text-gray-500 block">
-        {new Date(post.properties.date.date.start).toLocaleDateString()}
-      </span>
+      <div className="flex items-center space-x-3">
+        <span className="text-sm text-gray-500 block">
+          {new Date(post.properties.date.date.start).toLocaleDateString()}
+        </span>
+        <ViewUpdater slug={post.properties.slug.rich_text[0].text.content} />
+      </div>
+
       {blocks.map((block) => (
         <Fragment key={block.id}>{renderNotionBlock(block)}</Fragment>
       ))}

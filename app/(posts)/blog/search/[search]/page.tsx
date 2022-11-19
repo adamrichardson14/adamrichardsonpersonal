@@ -6,6 +6,7 @@ const notion = new Client({ auth: process.env.NOTION_KEY });
 import { Page } from "../../../../../types/notion";
 import Link from "next/link";
 import { EyeIcon } from "@heroicons/react/24/outline";
+import ViewCounter from "../../../../ViewCounter";
 
 function getFilters(search: string | undefined, tag: string | undefined) {
   let filters = {};
@@ -126,15 +127,20 @@ export default async function Search({ params: { search } }: any) {
                     <p className="text-gray-300 mt-1 font-sans">
                       {post.properties.Description.rich_text[0].plain_text}
                     </p>
-                    <div className="flex gap-3 mt-3">
-                      {post.properties.Tags.multi_select.map((tag) => (
-                        <span
-                          key={tag.id}
-                          className="inline-flex px-3 py-1.5 bg-[#141414] text-gray-200 rounded-lg group-hover:bg-gray-910"
-                        >
-                          {tag.name}
-                        </span>
-                      ))}
+                    <div className="flex justify-between items-center">
+                      <div className="flex gap-3 flex-wrap mt-3 w-full">
+                        {post.properties.Tags.multi_select.map((tag) => (
+                          <span
+                            key={tag.id}
+                            className="inline-flex px-3 py-1.5 bg-[#141414] text-gray-200 rounded-lg group-hover:bg-gray-910"
+                          >
+                            {tag.name}
+                          </span>
+                        ))}
+                      </div>
+                      <ViewCounter
+                        slug={post.properties.slug.rich_text[0].plain_text}
+                      />
                     </div>
                   </div>
                 </Link>

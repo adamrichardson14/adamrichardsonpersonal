@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { Client } from "@notionhq/client";
 import { dbQuery, Page } from "../types/notion";
+import ViewCounter from "./ViewCounter";
 const notion = new Client({ auth: process.env.NOTION_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 export const revalidate = 60 * 60;
@@ -50,11 +51,7 @@ export default async function MostRecentBlogPost({}) {
         >
           Read Post
         </Link>
-        {/* TODO: Add View Counter Component */}
-        <div className="flex">
-          <span className="block text-gray-500">1,123</span>
-          <EyeIcon className="w-6 h-6 text-gray-500 ml-2" />
-        </div>
+        <ViewCounter slug={post.slug.rich_text[0].text.content} />
       </div>
     </div>
   );
