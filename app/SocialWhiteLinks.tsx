@@ -82,7 +82,7 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
         </svg>
       </a>
 
-      <a
+      {/* <a
         target="__blank"
         rel="noopener noreferrer"
         href="https://www.linkedin.com/in/adamrichardson3/"
@@ -100,7 +100,7 @@ export default function SocialWhiteLinks({ className, size = 40 }: Props) {
             fill="white"
           />
         </svg>
-      </a>
+      </a> */}
     </div>
   );
 }

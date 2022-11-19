@@ -5,10 +5,9 @@ import Image from "next/image";
 import SocialWhiteLinks from "./SocialWhiteLinks";
 import Link from "next/link";
 import {
-  EyeIcon,
   BookOpenIcon,
-  VideoCameraIcon,
   CodeBracketIcon,
+  VideoCameraIcon,
 } from "@heroicons/react/24/outline";
 import MostRecentBlogPost from "./MostRecentBlogPost";
 import { Suspense } from "react";
@@ -130,7 +129,9 @@ export default function Home() {
         </header>
         <Projects />
         <div className="flex justify-between items-center mt-52">
-          <span className="text-8xl font-semibold text-white">Blog</span>
+          <span className="text-3xl md:text-8xl font-semibold text-white">
+            Blog
+          </span>
           <Link
             href="/blog"
             className="underline underline-offset-4 text-gray-200"
@@ -140,6 +141,7 @@ export default function Home() {
         </div>
         {/* @ts-expect-error Server Component */}
         <Blog />
+
         {/* @ts-expect-error Server Component */}
         <YoutubeVids />
         {/* @ts-expect-error Server Component */}

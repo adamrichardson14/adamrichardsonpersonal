@@ -43,7 +43,7 @@ export default function layout({ children }: IProps) {
         {/* @ts-expect-error Server Component */}
         <ListTags />
       </aside>
-      <div className="max-w-[862px]">{children}</div>;
+      <div className="max-w-[862px] ml-4">{children}</div>;
     </Container>
   );
 }

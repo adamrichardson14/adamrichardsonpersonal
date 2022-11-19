@@ -40,7 +40,9 @@ export default async function CodeSnippets() {
 
   return (
     <section className="mt-52 mb-10">
-      <span className="text-8xl font-semibold text-white">Code Snippets</span>
+      <span className="text-3xl md:text-8xl font-semibold text-white">
+        Code Snippets
+      </span>
       <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
         {snippets.map((snippet) => (
           <div
