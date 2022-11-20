@@ -39,6 +39,41 @@ export default async function Head({ params }: Props) {
           property="og:image"
           content={`/api/og?title=${post.properties.title.title[0].plain_text}`}
         />
+        <meta
+          property="og:url"
+          content={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
+        />
+        <meta
+          name="description"
+          content={post.properties.Description.rich_text[0].plain_text}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={post.properties.title.title[0].plain_text}
+        />
+        <meta
+          property="og:description"
+          content={post.properties.Description.rich_text[0].plain_text}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="www.adamrichardson.dev" />
+        <meta
+          property="twitter:url"
+          content={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
+        />
+        <meta
+          name="twitter:title"
+          content={post.properties.title.title[0].plain_text}
+        />
+        <meta
+          name="twitter:description"
+          content={post.properties.Description.rich_text[0].plain_text}
+        />
+        <meta
+          name="twitter:image"
+          content={`/api/og?title=${post.properties.title.title[0].plain_text}`}
+        />
       </head>
     </>
   );
