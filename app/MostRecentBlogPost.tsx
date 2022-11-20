@@ -38,7 +38,7 @@ export default async function MostRecentBlogPost({}) {
 
   return (
     <div className="relative w-full rounded-lg border-l-2 border-b-2 border-gray-800 p-3">
-      <BookOpenIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-500" />
+      <BookOpenIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-400" />
       <Link href={`/blog/${post.slug.rich_text[0].text.content}`} passHref>
         <h3 className="text-gray-200 mb-2 line-clamp-2 hover:text-gray-50 duration-200 transition-colors">
           {post.title.title[0].plain_text}

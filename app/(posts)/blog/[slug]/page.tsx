@@ -89,7 +89,7 @@ export default async function Post({ params: { slug } }: Props) {
         {post.properties.title.title[0].plain_text}
       </h1>
       <div className="flex items-center space-x-3">
-        <span className="text-sm text-gray-500 block">
+        <span className="text-sm text-gray-400 block">
           {new Date(post.properties.date.date.start).toLocaleDateString()}
         </span>
         <ViewUpdater slug={post.properties.slug.rich_text[0].text.content} />

@@ -44,7 +44,7 @@ export default async function Blog({ size = 5 }) {
             href={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
           >
             <div>
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-gray-400">
                 {new Date(post.properties.date.date.start).toLocaleDateString()}
               </span>
               <h4 className="font-mono text-[24px] text-white group-hover:text-gray-100">

@@ -29,7 +29,7 @@ export default async function MostRecentYoutubeVideo({}) {
   if (!video) return <div className="text-white">No video in dev</div>;
   return (
     <div className="relative w-full rounded-lg border-l-2 border-b-2 border-gray-800 p-3">
-      <VideoCameraIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-500" />
+      <VideoCameraIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-400" />
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -50,10 +50,10 @@ export default async function MostRecentYoutubeVideo({}) {
         </a>
         {/* TODO: Add View Counter Component */}
         <div className="flex">
-          <span className="block text-gray-500">
+          <span className="block text-gray-400">
             {Number(video.statistics.viewCount).toLocaleString()}
           </span>
-          <EyeIcon className="w-6 h-6 text-gray-500 ml-2" />
+          <EyeIcon className="w-6 h-6 text-gray-400 ml-2" />
         </div>
       </div>
     </div>

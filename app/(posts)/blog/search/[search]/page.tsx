@@ -111,7 +111,7 @@ export default async function Search({ params: { search } }: any) {
                 >
                   <div>
                     <div className="flex items-center">
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-gray-400">
                         {new Date(
                           post.properties.date.date.start
                         ).toLocaleDateString()}
@@ -178,8 +178,8 @@ export default async function Search({ params: { search } }: any) {
                       View Code
                     </Link>
                     <div className="flex">
-                      <span className="block text-gray-500">1,123</span>
-                      <EyeIcon className="w-6 h-6 text-gray-500 ml-2" />
+                      <span className="block text-gray-400">1,123</span>
+                      <EyeIcon className="w-6 h-6 text-gray-400 ml-2" />
                     </div>
                   </div>
                 </div>

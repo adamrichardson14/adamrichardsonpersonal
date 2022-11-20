@@ -61,10 +61,10 @@ export default async function YoutubeVids({}) {
                   Watch Video
                 </a>
                 <div className="flex">
-                  <span className="block text-gray-500">
+                  <span className="block text-gray-400">
                     {Number(video.statistics.viewCount).toLocaleString()}
                   </span>
-                  <EyeIcon className="w-6 h-6 text-gray-500 ml-2" />
+                  <EyeIcon className="w-6 h-6 text-gray-400 ml-2" />
                 </div>
               </div>
             </div>

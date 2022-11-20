@@ -70,7 +70,7 @@ export default function Home() {
                     <LoadingMostRecentItem
                       title="Loading Most Recent Blog Post"
                       icon={
-                        <BookOpenIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-500" />
+                        <BookOpenIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-400" />
                       }
                     />
                   }
@@ -84,7 +84,7 @@ export default function Home() {
                     <LoadingMostRecentItem
                       title="Getting most recent video"
                       icon={
-                        <VideoCameraIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-500" />
+                        <VideoCameraIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-400" />
                       }
                     />
                   }
@@ -97,7 +97,7 @@ export default function Home() {
                     <LoadingMostRecentItem
                       title="Loading most recent code snippet"
                       icon={
-                        <CodeBracketIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-500" />
+                        <CodeBracketIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-400" />
                       }
                     />
                   }

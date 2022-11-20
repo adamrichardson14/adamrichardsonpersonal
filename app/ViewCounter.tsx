@@ -13,10 +13,10 @@ export default function ViewCounter({ slug }: Props) {
   const { data, isValidating } = useSWR(`/api/views/${slug}`, fetcher);
   return (
     <div className="flex">
-      <span className="block text-gray-500">
+      <span className="block text-gray-400">
         {isValidating ? "..." : data?.count}
       </span>
-      <EyeIcon className="w-6 h-6 text-gray-500 ml-2" />
+      <EyeIcon className="w-6 h-6 text-gray-400 ml-2" />
     </div>
   );
 }
