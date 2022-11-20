@@ -34,7 +34,7 @@ export default function Home() {
               width={144}
               height={144}
               alt="Image of Adam Richardson"
-              className="mb-5"
+              className="mb-5 overflow-hidden rounded-full"
             />
             <h2 className="py-5">
               <span className="text-[32px] leading-8 font-mono  font-bold bg-gradient-to-r text-transparent from-cyan-500 to-cyan-200 bg-clip-text">
