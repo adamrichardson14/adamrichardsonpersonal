@@ -13,7 +13,7 @@ export default function handler(req: NextRequest) {
     const hasTitle = searchParams.has("title");
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
-      : "My default title";
+      : "Adam Richardson - Fullstack Developer, Course Creator, and Data Enthusiast";
 
     return new ImageResponse(
       (

@@ -37,7 +37,7 @@ export default async function Head({ params }: Props) {
         <title>{post.properties.title.title[0].plain_text}</title>
         <meta
           property="og:image"
-          content={`www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`}
+          content={`/api/og?title=${post.properties.title.title[0].plain_text}`}
         />
       </head>
     </>
