@@ -37,11 +37,11 @@ export default async function Head({ params }: Props) {
         <title>{post.properties.title.title[0].plain_text}</title>
         <meta
           property="og:image"
-          content={`/api/og?title=${post.properties.title.title[0].plain_text}`}
+          content={`www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`}
         />
         <meta
           property="og:url"
-          content={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
+          content={`www.adamrichardson.dev/blog/${post.properties.slug.rich_text[0].plain_text}`}
         />
         <meta
           name="description"
@@ -60,7 +60,7 @@ export default async function Head({ params }: Props) {
         <meta property="twitter:domain" content="www.adamrichardson.dev" />
         <meta
           property="twitter:url"
-          content={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
+          content={`www.adamrichardson.dev/blog/${post.properties.slug.rich_text[0].plain_text}`}
         />
         <meta
           name="twitter:title"
@@ -72,7 +72,7 @@ export default async function Head({ params }: Props) {
         />
         <meta
           name="twitter:image"
-          content={`/api/og?title=${post.properties.title.title[0].plain_text}`}
+          content={`www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`}
         />
       </head>
     </>
