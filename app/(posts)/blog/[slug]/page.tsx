@@ -1,11 +1,10 @@
 import "server-only";
 
 import { Client } from "@notionhq/client";
-import { dbQuerySlug, Page } from "../../../../types/notion";
+import { dbQuery, dbQuerySlug, Page } from "../../../../types/notion";
 import { Fragment } from "react";
 import { renderNotionBlock } from "../NotionBlockRenderer";
 import probeImageSize from "../imaging";
-import ViewCounter from "../../../ViewCounter";
 import ViewUpdater from "./ViewUpdater";
 const notion = new Client({ auth: process.env.NOTION_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
@@ -76,6 +75,36 @@ async function getPost(slug: string) {
   };
 
   return await notion.databases.query(dbQuery);
+}
+
+async function fetchBlogPosts(size: number) {
+  if (databaseId === undefined) {
+    throw new Error("No database ID provided");
+  }
+  let dbQuery: dbQuery = {
+    database_id: databaseId,
+    filter: {
+      and: [
+        { property: "published", checkbox: { equals: true } },
+        {
+          property: "Category",
+          select: { equals: "Blog Post" },
+        },
+      ],
+    },
+    sorts: [{ property: "date", direction: "descending" }],
+    page_size: size,
+  };
+  return await notion.databases.query(dbQuery);
+}
+
+export async function generateStaticParams() {
+  const results = await fetchBlogPosts(100);
+  const posts = results.results as Page[];
+
+  return posts.map((post) => ({
+    slug: post.properties.slug.rich_text[0].plain_text,
+  }));
 }
 
 export default async function Post({ params: { slug } }: Props) {
