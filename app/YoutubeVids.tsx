@@ -5,7 +5,11 @@ import Image from "next/image";
 
 export const revalidate = 60 * 60 * 24;
 
-async function getMostRecentYoutubeVideos(): Promise<Videos> {
+async function getMostRecentYoutubeVideos(): Promise<Videos | undefined> {
+  // Don't use API for Development (limited usage available)
+  if (process.env.NODE_ENV === "development") {
+    return undefined;
+  }
   // get most recent video from Youtube API
   const { YOUTUBE_API_KEY, YOUTUBE_CHANNEL_ID } = process.env;
   const uploadsURL = `https://youtube.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId=${YOUTUBE_CHANNEL_ID}&type=video&maxResults=6&key=${YOUTUBE_API_KEY}&order=date`;
@@ -20,9 +24,13 @@ async function getMostRecentYoutubeVideos(): Promise<Videos> {
 
 export default async function YoutubeVids({}) {
   const videos = await getMostRecentYoutubeVideos();
+
+  if (!videos) return <div className="text-white">No videos</div>;
   return (
     <section className="mt-52 mb-10">
-      <span className="text-3xl md:text-8xl font-semibold text-white text-center md:text-left block w-full">Recent Videos</span>
+      <span className="text-3xl md:text-8xl font-semibold text-white text-center md:text-left block w-full">
+        Recent Videos
+      </span>
       <div className="grid mx-auto grid-cols-1 md:grid-cols-2 gap-4 mt-10 w-full">
         {videos.items.map((video) => (
           <div

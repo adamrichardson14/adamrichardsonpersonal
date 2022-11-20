@@ -4,8 +4,12 @@ import { Item, Videos } from "../lib/youtube";
 
 export const revalidate = 60 * 60 * 24;
 
-async function getMostRecentYoutubeVideo(): Promise<Videos> {
-  // get most recent video from Youtube API
+async function getMostRecentYoutubeVideo(): Promise<Videos | undefined> {
+  // Don't use API for Development (limited usage available)
+  if (process.env.NODE_ENV === "development") {
+    return undefined;
+  }
+
   const { YOUTUBE_API_KEY, YOUTUBE_CHANNEL_ID } = process.env;
   const uploadsURL = `https://youtube.googleapis.com/youtube/v3/search?part=id%2Csnippet&channelId=${YOUTUBE_CHANNEL_ID}&type=video&maxResults=1&key=${YOUTUBE_API_KEY}&order=date`;
 
@@ -13,7 +17,6 @@ async function getMostRecentYoutubeVideo(): Promise<Videos> {
   const mostRecentVideo = await response.json();
   const videoId = mostRecentVideo.items[0].id.videoId;
 
-  // fetch video statistics from Youtube API
   const videoStatsURL = `https://youtube.googleapis.com/youtube/v3/videos?part=statistics,snippet&id=${videoId}&key=${YOUTUBE_API_KEY}`;
   const videoStatsResponse = await fetch(videoStatsURL);
   return await videoStatsResponse.json();
@@ -21,7 +24,9 @@ async function getMostRecentYoutubeVideo(): Promise<Videos> {
 
 export default async function MostRecentYoutubeVideo({}) {
   const videos = await getMostRecentYoutubeVideo();
-  const video = videos.items[0] as Item;
+  const video = videos ? (videos.items[0] as Item) : undefined;
+
+  if (!video) return <div className="text-white">No video in dev</div>;
   return (
     <div className="relative w-full rounded-lg border-l-2 border-b-2 border-gray-800 p-3">
       <VideoCameraIcon className="w-6 h-6 absolute -top-2 -right-2 text-gray-500" />
