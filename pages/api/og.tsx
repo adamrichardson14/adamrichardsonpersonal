@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
@@ -40,7 +41,7 @@ export default function handler(req: NextRequest) {
             }}
           >
             <img
-              alt="Vercel"
+              alt="Adam Richardson"
               height={200}
               src="https://www.adamrichardson.dev/adamrichardson.png"
               style={{ margin: "0 30px" }}
