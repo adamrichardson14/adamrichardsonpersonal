@@ -1,8 +1,7 @@
 import Code from "./Code";
 
 /* eslint-disable react/no-unescaped-entities */
-type Props = {};
-export default function CodePage({}: Props) {
+export default function CodePage() {
   return (
     <main className="mt-10 md:mt-0">
       <h1 className="text-[32px] inline font-bold  bg-gradient-to-r text-transparent from-fucshia-500 to-fucshia-200 bg-clip-text">

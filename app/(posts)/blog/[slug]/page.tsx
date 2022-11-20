@@ -15,6 +15,25 @@ type Props = {
   };
 };
 
+async function getPost(slug: string) {
+  if (databaseId === undefined) {
+    throw new Error("No database ID provided");
+  }
+  let dbQuery: dbQuerySlug = {
+    database_id: databaseId,
+    filter: {
+      and: [
+        { property: "published", checkbox: { equals: true } },
+        { property: "slug", rich_text: { equals: slug.toString() } },
+      ],
+    },
+    sorts: [{ property: "date", direction: "descending" }],
+    page_size: 1,
+  };
+
+  return await notion.databases.query(dbQuery);
+}
+
 const getBlocks = async (blockId: string) => {
   const response = await notion.blocks.children.list({
     block_id: blockId,
@@ -57,25 +76,6 @@ const getBlocks = async (blockId: string) => {
   );
   return blocksWithChildren;
 };
-
-async function getPost(slug: string) {
-  if (databaseId === undefined) {
-    throw new Error("No database ID provided");
-  }
-  let dbQuery: dbQuerySlug = {
-    database_id: databaseId,
-    filter: {
-      and: [
-        { property: "published", checkbox: { equals: true } },
-        { property: "slug", rich_text: { equals: slug.toString() } },
-      ],
-    },
-    sorts: [{ property: "date", direction: "descending" }],
-    page_size: 1,
-  };
-
-  return await notion.databases.query(dbQuery);
-}
 
 async function fetchBlogPosts(size: number) {
   if (databaseId === undefined) {

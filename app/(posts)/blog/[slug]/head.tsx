@@ -33,52 +33,50 @@ export default async function Head({ params }: Props) {
   const post = response.results[0] as Page;
   return (
     <>
-      <head>
-        <title>{post.properties.title.title[0].plain_text}</title>
-        <meta
-          property="og:image"
-          content={encodeURI(
-            `https://www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`
-          )}
-        />
-        <meta
-          property="og:url"
-          content={`https://www.adamrichardson.dev/blog/${post.properties.slug.rich_text[0].plain_text}`}
-        />
-        <meta
-          name="description"
-          content={post.properties.Description.rich_text[0].plain_text}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={post.properties.title.title[0].plain_text}
-        />
-        <meta
-          property="og:description"
-          content={post.properties.Description.rich_text[0].plain_text}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="www.adamrichardson.dev" />
-        <meta
-          property="twitter:url"
-          content={`https://www.adamrichardson.dev/blog/${post.properties.slug.rich_text[0].plain_text}`}
-        />
-        <meta
-          name="twitter:title"
-          content={post.properties.title.title[0].plain_text}
-        />
-        <meta
-          name="twitter:description"
-          content={post.properties.Description.rich_text[0].plain_text}
-        />
-        <meta
-          name="twitter:image"
-          content={encodeURI(
-            `https://www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`
-          )}
-        />
-      </head>
+      <title>{post.properties.title.title[0].plain_text}</title>
+      <meta
+        property="og:image"
+        content={encodeURI(
+          `https://www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`
+        )}
+      />
+      <meta
+        property="og:url"
+        content={`https://www.adamrichardson.dev/blog/${post.properties.slug.rich_text[0].plain_text}`}
+      />
+      <meta
+        name="description"
+        content={post.properties.Description.rich_text[0].plain_text}
+      />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:title"
+        content={post.properties.title.title[0].plain_text}
+      />
+      <meta
+        property="og:description"
+        content={post.properties.Description.rich_text[0].plain_text}
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="www.adamrichardson.dev" />
+      <meta
+        property="twitter:url"
+        content={`https://www.adamrichardson.dev/blog/${post.properties.slug.rich_text[0].plain_text}`}
+      />
+      <meta
+        name="twitter:title"
+        content={post.properties.title.title[0].plain_text}
+      />
+      <meta
+        name="twitter:description"
+        content={post.properties.Description.rich_text[0].plain_text}
+      />
+      <meta
+        name="twitter:image"
+        content={encodeURI(
+          `https://www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`
+        )}
+      />
     </>
   );
 }
