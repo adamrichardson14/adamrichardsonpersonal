@@ -42,14 +42,14 @@ export default function handler(req: NextRequest) {
             <svg
               id="e5eRSYMwQty1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 113 69"
               style={{
                 height: "100px",
                 width: "100px",
               }}
-              shape-rendering="geometricPrecision"
-              text-rendering="geometricPrecision"
+              shapeRendering="geometricPrecision"
+              textRendering="geometricPrecision"
             >
               <path
                 id="e5eRSYMwQty2"
