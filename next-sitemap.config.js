@@ -5,4 +5,4 @@ const config = {
   sitemapSize: 1000,
 };
 
-export default config;
+module.exports = config;
