@@ -20,25 +20,6 @@ export default function layout({ children }: IProps) {
         <div className="md:mt-10">
           <SearchForm />
         </div>
-        <div>
-          <span className="text-xl lg:text-2xl text-white font-mono block mt-10">
-            Filter By Type
-          </span>
-          <div className="">
-            <Link
-              className="text-gray-300 block font-sans underline underline-offset-4 mt-2"
-              href="/blog"
-            >
-              Blog Post
-            </Link>
-            <Link
-              className="text-gray-300 block font-sans underline underline-offset-4 mt-2"
-              href="/code"
-            >
-              Code Snippet
-            </Link>
-          </div>
-        </div>
 
         {/* @ts-expect-error Server Component */}
         <ListTags />

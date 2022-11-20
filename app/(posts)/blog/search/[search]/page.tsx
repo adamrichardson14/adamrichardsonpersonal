@@ -19,9 +19,9 @@ function getFilters(search: string | undefined, tag: string | undefined) {
           or: [
             {
               property: "Tags",
-              multi_select: { contains: search },
+              multi_select: { contains: decodeURI(search) },
             },
-            { property: "title", title: { contains: search } },
+            { property: "title", title: { contains: decodeURI(search) } },
           ],
         },
       ],
@@ -36,9 +36,9 @@ function getFilters(search: string | undefined, tag: string | undefined) {
           or: [
             {
               property: "Tags",
-              multi_select: { contains: tag },
+              multi_select: { contains: decodeURI(tag) },
             },
-            { property: "title", title: { contains: tag } },
+            { property: "title", title: { contains: decodeURI(tag) } },
           ],
         },
       ],

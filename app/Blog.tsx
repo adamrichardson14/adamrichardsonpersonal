@@ -16,13 +16,7 @@ async function fetchBlogPosts(size: number) {
   let dbQuery: dbQuery = {
     database_id: databaseId,
     filter: {
-      and: [
-        { property: "published", checkbox: { equals: true } },
-        {
-          property: "Category",
-          select: { equals: "Blog Post" },
-        },
-      ],
+      and: [{ property: "published", checkbox: { equals: true } }],
     },
     sorts: [{ property: "date", direction: "descending" }],
     page_size: size,

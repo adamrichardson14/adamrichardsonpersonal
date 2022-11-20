@@ -133,10 +133,7 @@ export interface Title {
 export interface dbQuery {
   database_id: string;
   filter: {
-    and: [
-      { property: string; checkbox: { equals: boolean } },
-      { property: string; select: { equals: string } }
-    ];
+    and: [{ property: string; checkbox: { equals: boolean } }];
   };
   sorts: [{ property: string; direction: "ascending" | "descending" }];
   page_size: number;
