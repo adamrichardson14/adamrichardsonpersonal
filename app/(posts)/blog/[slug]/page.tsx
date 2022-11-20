@@ -1,7 +1,7 @@
 import "server-only";
 
 import { Client } from "@notionhq/client";
-import { dbQuery, dbQuerySlug, Page } from "../../../../types/notion";
+import { dbQuerySlug, Page } from "../../../../types/notion";
 import { Fragment } from "react";
 import { renderNotionBlock } from "../NotionBlockRenderer";
 import probeImageSize from "../imaging";
@@ -81,17 +81,9 @@ async function fetchBlogPosts(size: number) {
   if (databaseId === undefined) {
     throw new Error("No database ID provided");
   }
-  let dbQuery: dbQuery = {
+  let dbQuery: any = {
     database_id: databaseId,
-    filter: {
-      and: [
-        { property: "published", checkbox: { equals: true } },
-        {
-          property: "Category",
-          select: { equals: "Blog Post" },
-        },
-      ],
-    },
+    filter: { property: "published", checkbox: { equals: true } },
     sorts: [{ property: "date", direction: "descending" }],
     page_size: size,
   };
@@ -103,7 +95,7 @@ export async function generateStaticParams() {
   const posts = results.results as Page[];
 
   return posts.map((post) => ({
-    slug: post.properties.slug.rich_text[0].plain_text,
+    slug: post.properties.slug.rich_text[0].plain_text.toString(),
   }));
 }
 

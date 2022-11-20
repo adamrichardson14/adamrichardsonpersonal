@@ -59,13 +59,13 @@ export default async function Code({
             </h3>
             <div className="flex justify-between">
               <Link
-                href={`/blog/${snippet.properties.slug.rich_text[0].plain_text}`}
+                href={`/blog/${snippet.properties.slug.rich_text[0].plain_text.toString()}`}
                 className="underline underline-offset-4 text-gray-100"
               >
                 View Code
               </Link>
               <ViewCounter
-                slug={snippet.properties.slug.rich_text[0].plain_text}
+                slug={snippet.properties.slug.rich_text[0].plain_text.toString()}
               />
             </div>
           </div>
