@@ -18,7 +18,7 @@ async function getPost(slug: string) {
     filter: {
       and: [
         { property: "published", checkbox: { equals: true } },
-        { property: "slug", rich_text: { equals: slug } },
+        { property: "slug", rich_text: { equals: slug.toString() } },
       ],
     },
     sorts: [{ property: "date", direction: "descending" }],
