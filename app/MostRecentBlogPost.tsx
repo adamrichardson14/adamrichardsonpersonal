@@ -14,7 +14,7 @@ async function getMostRecentBlogPost() {
   if (databaseId === undefined) {
     throw new Error("No database ID provided");
   }
-  let dbQuery: dbQuery = {
+  let dbQuery: any = {
     database_id: databaseId,
     filter: {
       and: [
