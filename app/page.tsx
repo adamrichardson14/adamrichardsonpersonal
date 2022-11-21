@@ -61,7 +61,7 @@ export default function Home() {
               size={35}
             />
             <div className="md:mt-10">
-              <span className="block text-[32px] leading-8 mb-5 font-bold bg-gradient-to-r text-transparent from-fuchsia-500 to-fuchsia-200 bg-clip-text">
+              <span className="block text-[32px] leading-8 mb-5 font-bold bg-gradient-to-r text-transparent from-fucshia-500 to-fucshia-200 bg-clip-text">
                 Recent Stuff
               </span>
               <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
