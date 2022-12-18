@@ -40,6 +40,7 @@ export default async function Head({ params }: Props) {
           `https://www.adamrichardson.dev/api/og?title=${post.properties.title.title[0].plain_text}`
         )}
       />
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         property="og:url"
         content={`https://www.adamrichardson.dev/blog/${post.properties.slug.rich_text[0].plain_text}`}

@@ -1,8 +1,6 @@
 import "server-only";
-import Link from "next/link";
 import Container from "../Container";
 import ListTags from "./ListTags";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import SearchForm from "./blog/SearchForm";
 
 interface IProps {
