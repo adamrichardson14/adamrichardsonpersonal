@@ -2,6 +2,8 @@
 const config = {
   siteUrl: "https://www.adamrichardson.dev",
   generateRobotsTxt: true,
+  changefreq: "daily",
+  priority: 0.7,
   sitemapSize: 1000,
 };
 
