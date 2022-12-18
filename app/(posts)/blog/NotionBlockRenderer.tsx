@@ -1,7 +1,4 @@
 import { Fragment } from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import Latex from "react-latex-next";
 
 import { Text } from "./NotionTextBlock";
 import Bookmark from "./NotionBookmark";
@@ -26,7 +23,7 @@ export function renderNotionBlock(block: any) {
       return (
         <h1
           id={slugify(value.rich_text[0].text.content)}
-          className="font-bold mt-4 mb-2 text-2xl leading-7 text-white"
+          className="font-bold mt-4 mb-2 text-3xl leading-7 text-white"
         >
           <Text text={value.rich_text} />
         </h1>
@@ -36,7 +33,7 @@ export function renderNotionBlock(block: any) {
       return (
         <h2
           id={slugify(value.rich_text[0].text.content)}
-          className="font-bold mt-4 text-xl mb-3 leading-7 text-white"
+          className="font-bold mt-4 text-2xl mb-3 leading-7 text-white"
         >
           <Text text={value.rich_text} />
         </h2>
@@ -46,7 +43,7 @@ export function renderNotionBlock(block: any) {
       return (
         <h3
           id={slugify(value.rich_text[0].text.content)}
-          className="font-bold mt-4 text-lg mb-2 leading-7 text-white"
+          className="font-bold mt-4 text-xl mb-2 leading-7 text-white"
         >
           <Text text={value.rich_text} />
         </h3>
