@@ -4,3 +4,6 @@ Allow: /
 
 # Host
 Host: https://www.adamrichardson.dev
+
+# Sitemaps
+Sitemap: https://www.adamrichardson.dev/sitemap.xml
