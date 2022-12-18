@@ -34,16 +34,28 @@ async function getPost(slug: string) {
   return await notion.databases.query(dbQuery);
 }
 
-const getBlocks = async (blockId: string) => {
+async function getBlocks(
+  blockId: string,
+  startCursor = undefined,
+  blocks = []
+): Promise<any[]> {
   const response = await notion.blocks.children.list({
     block_id: blockId,
     page_size: 100,
+    start_cursor: startCursor,
   });
 
+  blocks = blocks.concat(response.results);
+
+  // Check if there are more blocks to fetch
+  if (response.next_cursor) {
+    return getBlocks(blockId, response.next_cursor, blocks);
+  }
+
   const childBlocks = await Promise.all(
-    response.results
+    blocks
       .filter((b: any) => b.has_children)
-      .map(async (b) => {
+      .map(async (b: any) => {
         return {
           id: b.id,
           children: await getBlocks(b.id),
@@ -51,7 +63,7 @@ const getBlocks = async (blockId: string) => {
       })
   );
 
-  const blocksWithChildren = response.results.map((b: any) => {
+  const blocksWithChildren = blocks.map((b: any) => {
     if (b.has_children && !b[b.type].children) {
       b[b.type]["children"] = childBlocks.find((x) => x.id === b.id)?.children;
     }
@@ -75,7 +87,7 @@ const getBlocks = async (blockId: string) => {
       })
   );
   return blocksWithChildren;
-};
+}
 
 async function fetchBlogPosts(size: number) {
   if (databaseId === undefined) {
@@ -98,6 +110,8 @@ export async function generateStaticParams() {
     slug: post.properties.slug.rich_text[0].plain_text.toString(),
   }));
 }
+
+export const revalidate = 3600;
 
 export default async function Post({ params: { slug } }: Props) {
   const response = await getPost(slug);
