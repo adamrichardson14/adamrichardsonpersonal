@@ -50,9 +50,9 @@ export default async function CodeSnippets() {
             key={snippet.id}
             className="relative w-full rounded-lg border-2 border-gray-800 p-3"
           >
-            <h3 className="text-gray-200 pb-2 line-clamp-2">
+            <h2 className="text-gray-200 pb-2 line-clamp-2">
               {snippet.properties.title.title[0].plain_text}
-            </h3>
+            </h2>
             <div className="flex justify-between">
               <Link
                 href={`/blog/${snippet.properties.slug.rich_text[0].plain_text}`}

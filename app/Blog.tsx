@@ -41,9 +41,9 @@ export default async function Blog({ size = 5 }) {
               <span className="text-sm text-gray-400">
                 {new Date(post.properties.date.date.start).toLocaleDateString()}
               </span>
-              <h4 className="font-mono text-[24px] text-white group-hover:text-gray-100">
+              <h2 className="font-mono text-[24px] text-white group-hover:text-gray-100">
                 {post.properties.title.title[0].plain_text}
-              </h4>
+              </h2>
               <p className="text-gray-300 mt-1 font-sans">
                 {post.properties.Description.rich_text[0].plain_text}
               </p>
