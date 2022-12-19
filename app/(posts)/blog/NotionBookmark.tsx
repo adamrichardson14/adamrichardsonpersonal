@@ -8,8 +8,8 @@ const previewFetcher = (url: string) =>
 
 const Bookmark = ({ value }: { value: any }) => {
   const { url } = value;
-  const { data, error } = useSWR(url, previewFetcher);
 
+  const { data, error } = useSWR(url, previewFetcher);
   if (error)
     return (
       <a
@@ -23,7 +23,12 @@ const Bookmark = ({ value }: { value: any }) => {
       </a>
     );
 
-  if (!data)
+  if (
+    !data &&
+    !data?.twitterImage.url &&
+    !data?.twitterDescription &&
+    !data?.title
+  )
     return (
       <div
         className="border rounded cursor-pointer flex border-gray-400/50 max-h-30 text-gray-400 hover:bg-light-200  hover:bg-dark-700"
@@ -43,8 +48,13 @@ const Bookmark = ({ value }: { value: any }) => {
       </div>
     );
 
-  const { ogTitle: title, ogDescription: description, favicon, ogImage } = data;
-  const image = ogImage.url ?? [];
+  const {
+    ogTitle: title,
+    twitterDescription: description,
+    favicon,
+    twitterImage,
+  } = data;
+  const image = twitterImage.url ?? [];
 
   return (
     <div
@@ -60,7 +70,11 @@ const Bookmark = ({ value }: { value: any }) => {
         </p>
         <p className="flex space-x-2 h-6 text-sm opacity-70 items-center truncate mt-1">
           {favicon ? (
-            <img src={favicon} className="h-4 w-4" alt="favicon" />
+            <img
+              src={`${data.requestUrl}${favicon}`}
+              className="h-4 w-4"
+              alt="favicon"
+            />
           ) : (
             <LinkIcon className="h-5 w-5 text-gray-400" />
           )}
@@ -70,7 +84,7 @@ const Bookmark = ({ value }: { value: any }) => {
       {image && (
         <div className="h-28 max-w-[200px] hidden md:flex md:w-1/5">
           <img
-            src={ogImage.url}
+            src={twitterImage.url}
             alt={title}
             width={300}
             height={200}
